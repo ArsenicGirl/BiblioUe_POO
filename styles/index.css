@@ -41,9 +41,12 @@ main{
 .back_box div button{
     margin-top: 30px;
     margin-bottom: 30px;
-    margin-right: 270px;
+    margin-right: 20px;
 }
 
+.backBox_register {
+    padding-left: 150px;
+}
 /*Formulatios*/
 
 .container_login_register{
@@ -51,11 +54,13 @@ main{
     align-items: center;
     max-width: 380px;
     position: relative;
-    top: -185px;
+    top: -190px;
+    left: 15px;
+    transition: left 0.3s ease-in-out;
 }
 .container_login_register form{
     width: 100%;
-    padding: 60px 20px;
+    padding: 80px 20px;
     background: white;
     position: absolute;
     border-radius: 10px;
