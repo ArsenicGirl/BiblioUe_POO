@@ -28,8 +28,8 @@
 
     <div class="container">
     <!--CRUD-->
-    <div id="register-books" class="">
-
+    <div id="register-books" class="columns">
+      <div class="column is-6">
         <div class="register-form-books">
         <div class="block">
         <form  id="addBook_form" class="box">
@@ -66,20 +66,21 @@
               
         <div class="field">
             <label class="label">Descripción</label>
-            <div class="control">
-              <input class="input" id="desc" type="text" placeholder="Agregue una breve descripción del libro">
-            </div>
+            <textarea class="textarea " id="desc" placeholder="Escriba una breve descripción del libro"></textarea>
           </div>
 
               <input class="button is-link" type="submit" value="Registrar"><br> <br>
             </form>
         </div>
         </div>
+      </div>
 
+      <div class="column is-6">
         <div class="block">
             <div id="books-list">
 
             </div>
+        </div>
         </div>
     </div>
     </div>

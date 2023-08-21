@@ -15,28 +15,53 @@
 
     class UI{
         //metodos
+
+        //metodo pára añadir libro
         añadirLibro(libro){
            const bookList = document.getElementById("books-list");
            const element = document.createElement("div");
            element.innerHTML = `
-            <div class="block text-center">
+
                 <div class="box">
-                <strong>Libro titulo</strong>: ${libro.titulo}
-                <strong>Libro autor</strong>: ${libro.autor}
-                <strong>Libro categoria</strong>: ${libro.categoria}
-                <strong>Libro fecha</strong>: ${libro.fecha}
-                <strong>Libro desc</strong>: ${libro.desc}
+                <strong>Titulo</strong>: ${libro.titulo}
+                <strong>Autor</strong>: ${libro.autor}
+                <strong>Categoria</strong>: ${libro.categoria}
+                <strong>Fecha</strong>: ${libro.fecha}
+                <strong>Desc</strong>: ${libro.desc}
+                <a href="#" class="button is-danger is-light" name="eliminar">Delete</a>
                 </div>
-            </div>
+                <br>
            `;
            bookList.appendChild(element);
+           //this.cleanForm();
         }
-        EliminarLibro(){
 
+        //metodo para limpiar el formulario una vez se registró el libro
+        cleanForm(){
+            document.getElementById("addBook_form").reset();
         }
+
+        //metodo para eliminar un objeto de libro creado
+        eliminarLibro(element){
+            if(element.name === "eliminar");
+                element.parentElement.parentElement.remove();
+                this.notificacion("El producto ha sido borrado satisfactoriamente", "danger");
+        }
+
         //metodo para mostrar un mensaje una vez que se elimine un libro agregado
-       Confirmacion(){
+       notificacion(mensaje, estilo){
+        const div = document.createElement("div");
+            div.className = `notification is-${estilo}`;
+            div.appendChild(document.createTextNode(mensaje));
 
+            //mostrar
+            const container = document.querySelector(".container");
+            const registerBooks = document.querySelector("#register-books");
+            container.insertBefore(div, registerBooks);//esto es para que la alerta se ponga sobre el contenedor pero antes del formulario y las repsuestas
+
+            setTimeout(() => {
+                div.remove();
+            }, 3000); // El mensaje desaparecerá después de 3 segundos
         }
     }
 
@@ -59,7 +84,13 @@
     
     const ui = new UI();
     ui.añadirLibro(libro);
-
+    ui.cleanForm();
+    ui.notificacion("El libro ha sido agregado", "success");
     
 
+    })
+    //es para realizar el evento de borrar un libro cuando se haga el evento de click en delete
+    document.getElementById("books-list").addEventListener("click", function(e){
+        const ui = new UI();
+        ui.eliminarLibro(e.target);
     })
