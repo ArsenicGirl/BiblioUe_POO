@@ -83,6 +83,9 @@
     const libro = new Libro (titulo, autor, categoria, fecha, desc);
     
     const ui = new UI();
+    if(titulo === "" || autor === "" || fecha === "" || desc === ""){
+        return ui.notificacion("Tiene que llenar todos los campos", "danger");
+    }
     ui.añadirLibro(libro);
     ui.cleanForm();
     ui.notificacion("El libro ha sido agregado", "success");
