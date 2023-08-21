@@ -37,19 +37,19 @@
             <div class="field">
               <label class="label">Titulo</label>
               <div class="control">
-                <input class="input" type="text" placeholder="ejm. 100 años de soledad">
+                <input class="input" id="titulo" type="text" placeholder="ejm. 100 años de soledad">
               </div>
             </div>
           
             <div class="field">
               <label class="label">Autor</label>
               <div class="control">
-                <input class="input" type="text" placeholder="ejm. Gabriel García Marquez">
+                <input class="input" id="autor" type="text" placeholder="ejm. Gabriel García Marquez">
               </div>
             </div>
 
             <label class="label">Cetegoría</label>
-            <div class="select" for="rol" id="category_list" required>
+            <div class="select" for="rol" id="categoria" required>
                 <select>
                   <option value="nada" select="selected">-</option>
                   <option value="fiction">Ficción</option>
@@ -60,14 +60,21 @@
               <div class="field">
                 <label class="label">Año de publicación</label>
                 <div class="control">
-                  <input class="input" type="number" min="1400" max="2024" placeholder="Escriba el año">
+                  <input class="input" id="fecha" type="number" min="1400" max="2024" placeholder="Escriba el año">
                 </div>
               </div>
+              
+        <div class="field">
+            <label class="label">Descripción</label>
+            <div class="control">
+              <input class="input" id="desc" type="text" placeholder="Agregue una breve descripción del libro">
+            </div>
+          </div>
+
               <input class="button is-link" type="submit" value="Registrar"><br> <br>
             </form>
         </div>
         </div>
-
 
         <div class="block">
             <div id="books-list">
@@ -77,6 +84,6 @@
     </div>
     </div>
 
-    <script src=""></script>
+    <script src="/scripts/addBooks.js"></script>
 </body>
 </html>
