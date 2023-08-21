@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="/styles/addBook.css">
+
+</head>
+<body>
+
+    <!-- Header y menú -->
+    <header class="header">
+        <nav class="nav-header">
+            <!-- Logo del Laboratorio de Innovación Social -->
+            <a href="#" class="header-logo">
+                <img  src="/assets/logo-ue.svg" alt="logo" class="header-icon">
+            </a>
+            <!-- Lista del menú -->
+            <div>
+            <ul class="menu">
+                <li><a class="is-size-6 has-text-danger" href="#">Estudiantes</a></li>
+            </ul>
+            </div>
+        </nav>
+    </header><br><br><br><br><br>
+
+    <div class="container">
+    <!--CRUD-->
+    <div id="register-books" class="">
+
+        <div class="register-form-books">
+        <div class="block">
+        <form  id="addBook_form" class="box">
+            <h2 class="title is-4"> <strong>Añadir un libro</strong></h2>
+            <div class="field">
+              <label class="label">Titulo</label>
+              <div class="control">
+                <input class="input" type="text" placeholder="ejm. 100 años de soledad">
+              </div>
+            </div>
+          
+            <div class="field">
+              <label class="label">Autor</label>
+              <div class="control">
+                <input class="input" type="text" placeholder="ejm. Gabriel García Marquez">
+              </div>
+            </div>
+
+            <label class="label">Cetegoría</label>
+            <div class="select" for="rol" id="category_list" required>
+                <select>
+                  <option value="nada" select="selected">-</option>
+                  <option value="fiction">Ficción</option>
+                  <option value="nonFiction">No ficción</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label class="label">Año de publicación</label>
+                <div class="control">
+                  <input class="input" type="number" min="1400" max="2024" placeholder="Escriba el año">
+                </div>
+              </div>
+              <input class="button is-link" type="submit" value="Registrar"><br> <br>
+            </form>
+        </div>
+        </div>
+
+
+        <div class="block">
+            <div id="books-list">
+
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script src=""></script>
+</body>
+</html>

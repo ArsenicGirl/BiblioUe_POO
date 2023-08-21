@@ -19,7 +19,7 @@ function loginForm(){
 
 function registerForm(){
     register_form.style.display = "block";
-    container_login_register.style.left ="590px";
+    container_login_register.style.left ="500px";
     login_form.style.display = "none";
     backBox_register.style.opacity ="0";
     backBox_login.style.opacity = "1";

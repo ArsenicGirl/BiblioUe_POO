@@ -73,10 +73,12 @@ main{
 .login-form{
     opacity: 1;
     display: block;
+    box-shadow: 5px 14px 8px #00000042;
 }
 
 .register-form{
     display: none;
+    box-shadow: 5px 14px 8px #00000042;
 }
 
 /*Responsive*/
