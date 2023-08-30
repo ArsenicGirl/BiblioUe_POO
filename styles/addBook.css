@@ -4,3 +4,7 @@
     left: 200px;
 }
 
+table thead {
+    background-color: #0d1e7e;
+    color: white;
+}
