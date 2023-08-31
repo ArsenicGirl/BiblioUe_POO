@@ -1,5 +1,8 @@
 //Importar la librería
 const express = require("express");
+const mysql = require("mysql");
+const mysqlConexion = require ("./conexion");
+
 
 //crear el objeto para llamar los metodos de express
 const app = express();
