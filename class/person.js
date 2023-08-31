@@ -1,26 +1,46 @@
 //Clase
 class Person {
   //Constructor y atributos
-  constructor(name, lastName, email, password) {
-    this.name = name;
+  constructor(firstName, lastName, email, password) {
+    this.firstName = firstName;
     this.lastName = lastName;
     this.email = email;
     this.password = password;
   }
 
-  //metodos
-  setName(name) {
-    this.name = name;
+
+  //metodos setters y getters
+  setFirstName(firstName) {
+    this.firstName = firstName;
   }
 
-  getName() {
-    return this.name;
+  getFirstfirstName() {
+    return this.firstName;
   }
   setLastName(lastName) {
     this.lastName = lastName;
   }
 
-  getlastName() {
+  getLastName() {
     return this.lastName;
   }
+
+  setEmail(email) {
+    this.email = email;
+  }
+
+  getEmail() {
+    return this.email;
+  }
+
+  setPassword(password) {
+    this.email = password;
+  }
+
+  getPassword() {
+    return this.password;
+  }
 }
+
+//para exportar datos y hacer la herencia
+export default Person;
