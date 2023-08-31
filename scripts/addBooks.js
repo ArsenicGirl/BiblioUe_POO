@@ -45,7 +45,7 @@ class Biblioteca{
     eliminarLibro(element){
         if(element.name === "eliminar");
             element.parentElement.parentElement.remove();
-            this.notificacion("El producto ha sido borrado satisfactoriamente", "danger");
+            this.notificacion("El libro ha sido borrado satisfactoriamente", "danger");
     }
 
     //metodo para mostrar un mensaje una vez que se elimine un libro agregado
