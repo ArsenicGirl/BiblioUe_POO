@@ -2,7 +2,6 @@
 
 import Person from './person';
 
-
 class Student extends Person {
     constructor(stud_id, stud_firstName, stud_lastName, stud_email, stud_password, stud_carnet, coll_id, firstName, lastName, email, password) {
       super(firstName, lastName, email, password);

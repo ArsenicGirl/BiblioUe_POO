@@ -38,7 +38,7 @@
          <!--estructura de los formularios, se usa el action /validar porque así decidí llamar a la acción-->
         <div class="container_login_register">
 
-            <form action="/registrar" method="post" class="login-form">
+            <form action="/validar" method="post" class="login-form">
                 <h2 class="title is-4 has-text-link">Inicia sesión</h2>
             <div class="field">
                 <label class="label">Correo</label>
@@ -53,11 +53,11 @@
                 </div>
             </div>
 
-            <input class="button is-link has-background-link-dark" type="submit" value="Iniciar sesión">
+            <input id="btn_validar" class="button is-link has-background-link-dark" type="submit" value="Iniciar sesión">
 
             </form> 
        
-            <form action="/validar" method="post" class="register-form">
+            <form action="/registrar" method="post" class="register-form">
          
                 <h2 class="title is-4 has-text-link">Registrate</h2>
                 <div class="field">
@@ -87,7 +87,7 @@
                 </div>
             </div>
             
-            <input class="button is-link has-background-link-dark" type="submit" value="Registrarse"><br> <br>
+            <input id="btn-registrar" class="button is-link has-background-link-dark" type="submit" value="Registrarse"><br> <br>
         </form>
         </div>
     </div>
