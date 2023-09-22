@@ -2,7 +2,7 @@ const { response } = require("express")
 
 const url ='http://localhost:3000/api/book'
 const contenedor = document.querySelector ('tbody')
-let resultados = ''
+let results = ''
 
 const formArticulos = document.querySelector('form')  
 const book_title = document.getElementById('titulo')
@@ -29,9 +29,17 @@ const mostrar = (book) =>{
       results +=
                 <tr>
                   <td>${book.book_id}</td>
-                  <td>${book.book_}</td>
+                  <td>${book.book_title}</td>
+                  <td>${book.book_author}</td>
+                  <td>${book.book_category}</td>
+                  <td>${book.book_publishYear}</td>
+                  <td>${book.book_description}</td>
+                  <td class= "text-center">
+                    <a class="btn-edit button is-danger is-light">Editar</a><a class="btn-delete button is-success is-light">Eliminar</a>
+                  </td>
                 </tr>
   })
+  contenedor.innerHTML = results
 }
 
 //meotdo para mostrar los datos (la url se definió arriba: 'http://localhost:3000/api/book )
