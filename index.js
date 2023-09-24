@@ -33,10 +33,28 @@ connection.connect(function(error){
     }
 })
 
-//para que muestre la pagina inicial (es la ruta raiz)
-app.get("/views/index.html", function(req,res){
-    res.render("index")
+//links a las paginas para usar en los botones y linkearlas entre sí
+app.get("/", function(req,res){
+    res.render(__dirname + '/views/index.ejs')
 })
+
+//**USERS**
+app.get("/library", function(req,res){
+    res.sendFile(__dirname + '/views/user/library.htm nl')
+})
+
+//**ADMIN** 
+app.get("/addBook", function(req,res){
+    res.sendFile(__dirname + '/views/admin/add.html')
+})
+app.get("/indexAdmin", function(req,res){
+    res.sendFile(__dirname + '/views/admin/indexAdmin.html')
+})
+
+
+//Motor de vistas (para que se vean los estilos y así
+app.set("view engine", "ejs");
+
 
 /********TABLA STUDENT***********/
 // Ruta para obtener y mostrar datos de una tabla
