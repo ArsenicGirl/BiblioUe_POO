@@ -9,7 +9,7 @@ const database = require("mime-db");
 //crear el objeto para llamar los metodos de express
 const app = express();
 
-
+app.use(express.static('styles'));
 app.use(express.json());
 app.use(cors());
 
@@ -37,18 +37,24 @@ connection.connect(function(error){
 app.get("/", function(req,res){
     res.render(__dirname + '/views/index.ejs')
 })
+/*
+app.post("/registrar", function(req,res){
+    const datos = req.body;
+    
+    console.log(datos);
+})*/
 
 //**USERS**
-app.get("/library", function(req,res){
-    res.sendFile(__dirname + '/views/user/library.htm nl')
-})
+app.get("/library", function(req, res) {
+    res.render(__dirname + '/views/user/library.html'); 
+});
 
 //**ADMIN** 
 app.get("/addBook", function(req,res){
-    res.sendFile(__dirname + '/views/admin/add.html')
+    res.render(__dirname + '/views/admin/add.ejs')
 })
 app.get("/indexAdmin", function(req,res){
-    res.sendFile(__dirname + '/views/admin/indexAdmin.html')
+    res.render(__dirname + '/views/admin/indexAdmin.html')
 })
 
 
@@ -61,7 +67,10 @@ app.set("view engine", "ejs");
 app.get("/api/student", function(req, res) {
  // Consulta SQL para seleccionar/mostrar TODOS los registros de una tabla (por ejemplo, 'mi_tabla')
     connection.query('SELECT * FROM student', function(error, results) {
-      if (error) {
+     /*   if (!datos.stud_firstName || !datos.stud_lastName || !datos.stud_email || !datos.stud_password || !datos.stud_carnet) {
+            return res.status(400).send("Todos los campos son obligatorios.");
+          }*/
+        if (error) {
         throw error;
       }else{
         res.send(results);
@@ -91,7 +100,7 @@ app.post("/api/student", function(req, res) {
         if (error) {
             throw error;
          }else{
-            res.send(results);
+            console.log(results);
          }
     });
 });

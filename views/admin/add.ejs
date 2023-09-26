@@ -51,7 +51,7 @@
             </div>
 
             <label class="label">Cetegoría</label>
-            <div class="select" for="rol" id="categoria" required>
+            <div class="select" for="rol" id="categoria">
                 <select>
                   <option value="nada" select="selected">-</option>
                   <option value="fiction">Ficción</option>
@@ -71,7 +71,7 @@
             <textarea class="textarea " id="desc" placeholder="Escriba una breve descripción del libro"></textarea>
           </div>
 
-              <input class="button is-link" type="submit" value="Registrar"><br> <br>
+              <button class="btnCrear button is-link" type="submit"> Registrar </button><br> <br>
             </form>
         </div>
         </div>
@@ -101,6 +101,61 @@
     </div>
     </div>
 
-    <script src="/class/book copy.js"></script>
+    <script>
+      const { response } = require("express")
+
+const url ='http://localhost:3000/api/book'
+const contenedor = document.querySelector ('tbody')
+let results = ''
+
+const formArticulos = document.querySelector('form')  
+const book_title = document.getElementById('titulo')
+const book_author = document.getElementById('autor')
+const book_category = document.getElementById('categoria')
+const book_publishYear= document.getElementById('categoria')
+const book_description = document.getElementById('descripcion')
+let opcion = ''
+
+//eliminar los datos del formularoi cuando se cree un registro
+btnCrear.addEventListener('click',()=>{
+  book_title.value = ''
+  book_author.value = ''
+  book_category.value = ''
+  book_publishYear = ''
+  book_description = ''
+  opcion = cleanForm(document.getElementById("addBook_form").reset())
+
+})
+
+//funcion para mostrar los datos
+const mostrar = (books) => {
+        books.forEach((book) => {
+            results += `
+                <tr>
+                    <td>${book.book_id}</td>
+                    <td>${book.book_title}</td>
+                    <td>${book.book_author}</td>
+                    <td>${book.book_category}</td>
+                    <td>${book.book_publishYear}</td>
+                    <td>${book.book_description}</td>
+                    <td class="text-center">
+                        <a class="btn-edit button is-danger is-light">Editar</a>
+                        <a class="btn-delete button is-success is-light">Eliminar</a>
+                    </td>
+                </tr>
+            `;
+        });
+        contenedor.innerHTML = results;
+    };
+
+//meotdo para mostrar los datos (la url se definió arriba: 'http://localhost:3000/api/book )
+fetch(url)
+  .then(response => response.json())
+  .then(data => mostrar(data))
+  .catch(error => console.log(error))
+
+
+  
+    </script>
 </body>
 </html>
